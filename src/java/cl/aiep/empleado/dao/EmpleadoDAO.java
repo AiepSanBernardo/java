@@ -200,8 +200,8 @@ public class EmpleadoDAO extends DAOBase {
             empleado.setTipoEmpleado( tipoEmpleado  );
             
             turno.setTurnoId(rs.getInt("turnoId"));
-            turno.setTipoEmpleadoId(rs.getInt("tipoEmpleadoId"));
             turno.setDescripcion( rs.getString("t.descripcion"));
+            turno.setTipoEmpleado(tipoEmpleado);            
             
             empleado.setTurno( turno);
             

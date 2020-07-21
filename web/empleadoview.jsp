@@ -9,7 +9,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
-<title>Cliente</title>
+<title>Empleado</title>
 <html>    
      <%@include file="/part/head.jsp" %>
     
@@ -92,15 +92,7 @@
                                 
                                 
                             </div>
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
+                                                       
                             
                             <hr>
                             
@@ -110,7 +102,7 @@
                                     <input type="submit" value="Grabar" name="action" class="btn btn-primary w-100"/>
                                 </div>
                                 <div class="col-6">                                
-                                    <a class="btn btn-warning w-100" href="empleadoController.do?action=listar" >Volver a Clientes</a> 
+                                    <a class="btn btn-warning w-100" href="empleadoController.do?action=listar" >Volver a Empleados</a> 
                                 </div>                                
                             </div>
                             

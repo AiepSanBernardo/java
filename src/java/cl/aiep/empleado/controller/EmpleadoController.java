@@ -254,7 +254,7 @@ public class EmpleadoController extends HttpServlet {
 
         request.setAttribute("mensaje", mensaje);
         request.setAttribute("estiloMensaje", estiloMensaje);
-        request.getRequestDispatcher("empleadosview.jsp").forward(request, response);
+        request.getRequestDispatcher("empleadoController.do?action=listar").forward(request, response);
 
     }
 

@@ -6,6 +6,7 @@
 package cl.aiep.empleado.dao;
 
 
+import cl.aiep.empleado.modelo.TipoEmpleadoModel;
 import cl.aiep.empleado.modelo.TurnoModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -31,7 +32,7 @@ public class TurnoDAO extends DAOBase {
         try {
             conn = getConnection();
             StringBuilder query = getQuerySelect();
-            query.append( " WHERE tipoempleadoId = ? ");
+            query.append( " WHERE t.tipoempleadoId = ? ");
             
             pst = conn.prepareStatement(query.toString());
             pst.setInt(1, idTipoEmpleado);
@@ -78,27 +79,33 @@ public class TurnoDAO extends DAOBase {
         StringBuilder query = new StringBuilder();
 
         query.append(" SELECT ");
-        query.append("  turnoId ");
-        query.append(" ,tipoempleadoId ");
-        query.append(" ,descripcion");        
-        query.append(" FROM turno ");
+        query.append("  t.turnoId ");
+        query.append(" ,t.tipoempleadoId ");
+        query.append(" ,t.descripcion");                
+        query.append(" ,te.descripcion ");        
+        query.append(" FROM turno t ");        
+        query.append("    INNER JOIN tipoempleado te ON  te.tipoEmpleadoId = t.tipoEmpleadoId ");
 
         return query;
     }
     
     private TurnoModel toModel(ResultSet rs) {
-        TurnoModel model = new TurnoModel();
+        TurnoModel turnoModel = new TurnoModel();
+        TipoEmpleadoModel tipoEmpleadoModel = new TipoEmpleadoModel();
         
         try{
-            model.setTurnoId(rs.getInt("turnoId"));
-            model.setTipoEmpleadoId(rs.getInt("tipoempleadoId"));
-            model.setDescripcion(rs.getString("descripcion"));            
+            turnoModel.setTurnoId(rs.getInt("turnoId"));
+            turnoModel.setDescripcion(rs.getString("t.descripcion"));            
+            tipoEmpleadoModel.setTipoEmpleadoId( rs.getInt("tipoempleadoId"));
+            tipoEmpleadoModel.setDescripcion(rs.getString("te.descripcion"));            
+            turnoModel.setTipoEmpleado( tipoEmpleadoModel);
+            
         }
         catch( SQLException ex ){
             writeErrorConsole( ex );
         }
         
-        return model ;
+        return turnoModel ;
     }
     
 }

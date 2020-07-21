@@ -19,7 +19,12 @@
 
             <div class="shadow" style="height: 400px;" >
                 
-                Esta es la pagina principal de empleado
+                <div class="jumbotron">
+                    Esta es la pagina principal de empleado
+                    
+                </div>
+                    
+                
                 
             </div>
             

@@ -12,6 +12,20 @@ package cl.aiep.empleado.modelo;
 public class TurnoModel {
 
     /**
+     * @return the tipoEmpleado
+     */
+    public TipoEmpleadoModel getTipoEmpleado() {
+        return tipoEmpleado;
+    }
+
+    /**
+     * @param tipoEmpleado the tipoEmpleado to set
+     */
+    public void setTipoEmpleado(TipoEmpleadoModel tipoEmpleado) {
+        this.tipoEmpleado = tipoEmpleado;
+    }
+
+    /**
      * @return the turnoId
      */
     public int getTurnoId() {
@@ -24,20 +38,7 @@ public class TurnoModel {
     public void setTurnoId(int turnoId) {
         this.turnoId = turnoId;
     }
-
-    /**
-     * @return the tipoEmpleadoId
-     */
-    public int getTipoEmpleadoId() {
-        return tipoEmpleadoId;
-    }
-
-    /**
-     * @param tipoEmpleadoId the tipoEmpleadoId to set
-     */
-    public void setTipoEmpleadoId(int tipoEmpleadoId) {
-        this.tipoEmpleadoId = tipoEmpleadoId;
-    }
+  
 
     /**
      * @return the descripcion
@@ -54,6 +55,6 @@ public class TurnoModel {
     }
     
     private int turnoId;
-    private int tipoEmpleadoId;
+    private TipoEmpleadoModel tipoEmpleado;
     private String descripcion;
 }
