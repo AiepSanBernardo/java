@@ -18,10 +18,24 @@ import java.sql.SQLException;
 public class DAOBase {
     
     private Connection conn = null;
-    private final String dbName = "jdbc:mysql://localhost:3306/dbempleado?serverTimezone=UTC";
+    //private final String dbName = "jdbc:mysql://localhost:3306/dbempleado?serverTimezone=UTC";
+    
+    private final String dbName = "jdbc:mysql://node55288-env-7674042.jl.serv.net.mx:3306/dbempleado";
+    
+    
+    
+    
+    //private final String dbName = "jdbc:mysql://node55279-env-0463442.jl.serv.net.mx:3306/dbempleado";
     private final String driver = "com.mysql.jdbc.Driver";
-    private final String user = "Test";        
-    private final String pass = "1234_abcd_OK";
+    //private final String user = "Test";        
+    //private final String pass = "1234_abcd_OK";
+    //private final String user = "root";        
+    //private final String pass = "ZNTgso48570";
+    
+    private final String user = "root";        
+    private final String pass = "QHOfok15446";
+    
+    
     
     protected Connection getConnection(){
         try{            

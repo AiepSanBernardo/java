@@ -37,7 +37,8 @@
 
                         <div class="form-group">
                             
-                            <input type="checkbox" name="chkRecordar" value="Recordar" class="form-control">
+                            <input type="checkbox" name="chkRecordar" value="Recordar" >
+                            Recordar
 
                         </div>
 
